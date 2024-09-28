@@ -32,10 +32,11 @@ export class ProductsService {
   }
 
   findByProvider(id: string){
-    return "ok"
-    // const productos = this.products.filter((p)=>p.provider === id);
-    // if(productos.length === 0) throw new NotFoundException()
-    // return productos;
+    return this.productRepository.findBy({
+      provider: {
+        providerId: id,
+      }
+    })
   }
 
   async update(id: string, updateProductDto: UpdateProductDto) {
