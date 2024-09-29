@@ -1,4 +1,5 @@
-import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+import { Location } from "src/locations/entities/location.entity";
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn } from "typeorm";
 
 @Entity()
 export class Employee {
@@ -17,4 +18,10 @@ export class Employee {
         nullable: true
     })
     photoUrl: string;
+
+    @ManyToOne(()=> Location, (location) => location.employees)
+    @JoinColumn({
+        name: "locationId"
+    })
+    location: Location
 }
