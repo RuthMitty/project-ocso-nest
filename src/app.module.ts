@@ -33,7 +33,7 @@ import { AuthModule } from "./auth/auth.module";
     RegionsModule,
     AuthModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [],
+  providers: [],
 })
 export class AppModule {}
